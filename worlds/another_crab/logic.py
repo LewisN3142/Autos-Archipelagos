@@ -29,13 +29,13 @@ def can_reach_moonsnail(options: ACTGameOptions, state: CollectionState, player:
     return state.has(iname.fishing_line, player) or are_skips_allowed(options)
     
 def is_post_ceviche_accessible(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
-    return state.can_reach_location(lname.ceviche_sisters, player) or can_sisters_skip(options, state, player) 
+    return state.can_reach_location(lname.ceviche_sisters, player) or can_sisters_skip(options, state, player) or can_sisters_skip_glitches(options, state, player)
     
 def is_consortium_accessible_vale(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
-    return can_big_boost_jump(options, state, player) and state.can_reach_region(rname.flotsam_vale, player)
+    return can_big_boost_jump(options, state, player) 
     
 def is_consortium_accessible_grove(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
-    return (is_consortium_accessible_grove_vanilla(state,player) or is_consortium_accessible_grove_skips(options,state,player) or can_CAL(options, state, player)) and state.can_reach_region(rname.grove_main, player)
+    return is_consortium_accessible_grove_vanilla(state,player) or is_consortium_accessible_grove_skips(options,state,player) or can_CAL(options, state, player)
     
 def is_consortium_accessible_grove_skips(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return state.has_all({iname.fishing_line, iname.fork},player) and are_skips_allowed(options)
@@ -47,7 +47,7 @@ def is_southern_town_ridge_accessible(options: ACTGameOptions, state: Collection
     return is_southern_town_ridge_accessible_restricted(options, state, player) or state.has(iname.eelectrocute, player)
     
 def is_southern_town_ridge_accessible_restricted(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
-    return state.has(iname.razor_blade,player) and can_CAL(options, state, player)
+    return can_razor_CAL(options, state, player)
     
 def is_secluded_ridge_accessible(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return state.has(iname.mantis_punch, player) or are_skips_allowed(options)
@@ -77,14 +77,26 @@ def can_magista_skip_grappleless(options: ACTGameOptions, state: CollectionState
 def can_sisters_skip(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return state.has_any([iname.fork, iname.streamline], player) and state.has(iname.fishing_line, player) and are_skips_allowed(options)
     
+def can_sisters_skip_glitches(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
+    return can_CAL(options, state, player)
+    
 #Can bypass/kill pink crab by moonsnail
 def can_pink_crab(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return can_reach_msg_dmg_shells(state,player) or  has_adaptation(state,player) or can_shell_clip(options, state, player)
+    
+def can_pagurus_quick_kill(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
+    return are_skips_allowed(options)
+    
+def can_heikia_quick_kill(options: ACTGameOptions, state: CollectionState, player:  int) -> bool:
+    return are_glitches_allowed(options) and state.has_all({iname.fishing_line, iname.spearfishing}, player)
 
 #Check if specific tricks are executable
 #CAL
 def can_CAL(options: ACTGameOptions, state: CollectionState, player: int) ->  bool:
     return state.has(iname.fork, player) and are_glitches_allowed(options)
+    
+def can_razor_CAL(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
+    return state.has(iname.razor_blade, player) and can_CAL(options, state, player)
     
 #Shell Clip (clip may be possible with other shells, need to check)
 def can_shell_clip(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
