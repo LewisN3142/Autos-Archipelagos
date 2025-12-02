@@ -67,7 +67,7 @@ class ACTWorld(World):
             regions_to_exclude = [rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
 
         if self.options.goal == "magista":
-            regions_to_exclude = [rname.reefs_edge,rname.reefs_edge_grapple,rname.new_carcinia,rname.sands_between,rname.post_pag,rname.southern_town_ridge,rname.secluded_ridge_eel,rname.secluded_ridge,rname.trashbin_plateau,rname.expired_grove,rname.grove_main,rname.grove_village,rname.grove_raised_platforms,rname.flotsam_vale,rname.post_ceviche,rname.consortium_arena,rname.scuttleport,rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
+            regions_to_exclude = [rname.reefs_edge_grapple, rname.sands_east_grove_shells,rname.post_pag,rname.southern_town_ridge,rname.secluded_ridge,rname.secluded_ridge_eel,rname.trashbin_plateau,rname.grove_main,rname.grove_raised_platforms,rname.grove_village,rname.post_ceviche,rname.consortium_arena,rname.voltai_skip_spot,rname.plug_fuse,rname.scuttleport_entrance,rname.scuttleport_main,rname.scuttleport_T2roof_T3,rname.scuttleport_voltai,rname.dumptruck,rname.plains,rname.reefs_edge,rname,rname.new_carcinia,rname.sands_between,rname.expired_grove,rname.flotsam_vale,rname.pinbarge,rname.unfathom,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
 
         
         #Shuffle Shell Event Locations
@@ -78,7 +78,7 @@ class ACTWorld(World):
             shell_at_soda: ACTItemData = item_table[shell_items[shell_locations.index(sname.soda_can)]]
             plug_region: Region = self.multiworld.get_region(location_table[shell_locations[shell_items.index(sname.plug_fuse)]].region,self.player)
             prevented_shells_at_soda = [sname.piggy_bank,sname.crab_husk,sname.rubber_duck,sname.baby_shoe]
-            prevented_plug_regions = [rname.scuttleport,rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
+            prevented_plug_regions = [rname.scuttleport_entrance,rname.scuttleport_main,rname.scuttleport_T2roof_T3,rname.scuttleport_voltai, rname.dumptruck,rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
             print(plug_region.entrances[0].parent_region.name)
 
             
@@ -193,7 +193,7 @@ class ACTWorld(World):
             regions_to_exclude = [rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
 
         if self.options.goal == "magista":
-            regions_to_exclude = [rname.reefs_edge,rname.new_carcinia,rname.sands_between,rname.post_pag,rname.secluded_ridge,rname.expired_grove,rname.grove_main,rname.grove_village,rname.flotsam_vale,rname.scuttleport,rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
+            regions_to_exclude = [rname.reefs_edge_grapple, rname.sands_east_grove_shells,rname.post_pag,rname.southern_town_ridge,rname.secluded_ridge,rname.secluded_ridge_eel,rname.trashbin_plateau,rname.grove_main,rname.grove_raised_platforms,rname.grove_village,rname.post_ceviche,rname.consortium_arena,rname.voltai_skip_spot,rname.plug_fuse,rname.scuttleport_entrance,rname.scuttleport_main,rname.scuttleport_T2roof_T3,rname.scuttleport_voltai,rname.dumptruck,rname.plains,rname.reefs_edge,rname,rname.new_carcinia,rname.sands_between,rname.expired_grove,rname.flotsam_vale,rname.pinbarge,rname.unfathom,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
             for item_name in item_table:
                 if item_table[item_name].item_group == "Currency":
                     items_to_create[item_name] = 0
@@ -296,18 +296,18 @@ class ACTWorld(World):
             
         if self.options.goal == "roland":
             self.multiworld.completion_condition[self.player] = \
-                lambda state: state.can_reach_region(spot = rname.pinbarge, player = self.player)
+                lambda state: state.can_reach_location(spot = lname.roland, player = self.player)
             regions_to_exclude = [rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
             
         if self.options.goal == "voltai":
             self.multiworld.completion_condition[self.player] = \
-                lambda state: state.can_reach_region(spot = rname.scuttleport,player =self.player)
+                lambda state: state.can_reach_location(spot = lname.voltai,player =self.player)
             regions_to_exclude = [rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
 
         if self.options.goal == "magista":
             self.multiworld.completion_condition[self.player] = \
-                lambda state: state.can_reach(spot = rname.reefs_edge,player = self.player)
-            regions_to_exclude = [rname.reefs_edge,rname.new_carcinia,rname.sands_between,rname.post_pag,rname.secluded_ridge,rname.expired_grove,rname.grove_main,rname.grove_village,rname.flotsam_vale,rname.scuttleport,rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
+                lambda state: state.can_reach_location(spot = lname.magista,player = self.player)
+            regions_to_exclude = [rname.reefs_edge_grapple, rname.sands_east_grove_shells,rname.post_pag,rname.southern_town_ridge,rname.secluded_ridge,rname.secluded_ridge_eel,rname.trashbin_plateau,rname.grove_main,rname.grove_raised_platforms,rname.grove_village,rname.post_ceviche,rname.consortium_arena,rname.voltai_skip_spot,rname.plug_fuse,rname.scuttleport_entrance,rname.scuttleport_main,rname.scuttleport_T2roof_T3,rname.scuttleport_voltai,rname.dumptruck,rname.plains,rname.reefs_edge,rname,rname.new_carcinia,rname.sands_between,rname.expired_grove,rname.flotsam_vale,rname.pinbarge,rname.unfathom,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
 
         for location_name, location_id in location_name_to_id.items():
             if location_table[location_name].region not in regions_to_exclude:

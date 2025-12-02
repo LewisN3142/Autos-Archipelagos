@@ -42,9 +42,6 @@ def set_region_rules(world: "ACTWorld") -> None:
     
   multiworld.get_entrance("The Sands Between -> Secluded Ridge", player).access_rule = \
     lambda state: (options.goal == "magista") or logic.is_secluded_ridge_accessible(options, state, player)
-    
-  multiworld.get_entrance("The Sands Between -> The Sands Between - Grapple to East of Grove", player).access_rule = \
-    lambda state: state.has(iname.fishing_line,player)
         
   multiworld.get_entrance("Secluded Ridge -> Secluded Ridge - Past Eelectrocute", player).access_rule = \
     lambda state: (options.goal == "magista") or logic.is_secluded_ridge_eel_accessible(options, state, player)
@@ -52,14 +49,17 @@ def set_region_rules(world: "ACTWorld") -> None:
   multiworld.get_entrance("The Sands Between -> Trashbin Plateau", player).access_rule = \
     lambda state: (options.goal == "magista") or state.has(iname.mantis_punch, player)
     
-  multiworld.get_entrance("Trashbin Plateau -> Trashbin Shells", player).access_rule = \
-    lambda state: state.has_all({iname.eelectrocute, iname.fishing_line}, player)
+  multiworld.get_entrance("The Sands Between -> The Sands Between - Grapple to East of Grove",player).access_rule = \
+    lambda state: (options.goal == "magista") or state.has_all({iname.fishing_line, iname.eelectrocute}, player)
     
   multiworld.get_entrance("The Sands Between -> Southern Town Ridge", player).access_rule = \
     lambda state: (options.goal == "magista") or logic.is_southern_town_ridge_accessible(options, state, player)
     
   multiworld.get_entrance("Expired Grove - Main -> Flotsam Vale - Consortium Arena",player).access_rule = \
     lambda state: (options.goal == "magista") or logic.is_consortium_accessible_grove(options, state, player)
+    
+  multiworld.get_entrance("Expired Grove - Main -> Expired Grove - Village", player).access_rule = \
+    lambda state: (options.goal == "magista") or state.can_reach_location(lname.heikea,player)
     
   multiworld.get_entrance("Expired Grove - Main -> Expired Grove - Raised Platforms",player).access_rule = \
     lambda state: (options.goal == "magista") or logic.is_consortium_accessible_grove(options, state, player)
@@ -70,17 +70,38 @@ def set_region_rules(world: "ACTWorld") -> None:
   multiworld.get_entrance("Flotsam Vale -> Flotsam Vale - Consortium Arena", player).access_rule = \
     lambda state: (options.goal == "magista") or logic.is_consortium_accessible_vale(options, state, player)
     
-  multiworld.get_entrance("Flotsam Vale -> Scuttleport",player).access_rule = \
-    lambda state: (options.goal == "magista") or logic.can_access_scuttleport(options, state, player)
-    
   multiworld.get_entrance("Flotsam Vale -> Plug Fuse Pipes",player).access_rule = \
     lambda state: (options.goal == "magista") or logic.has_all_maps(state,player)
     
-  multiworld.get_entrance("Scuttleport -> Plug Fuse Pipes",player).access_rule = \
-    lambda state: (options.goal == "magista") or logic.has_all_maps(state,player)
+  multiworld.get_entrance("Flotsam Vale -> Flotsam Vale - Voltai Skip Spot",player).access_rule = \
+    lambda state: (options.goal == "magista") or state.has(iname.fishing_line,player)
+    
+  multiworld.get_entrance("Expired Grove - Village -> Flotsam Vale - Voltai Skip Spot", player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.can_razor_CAL(options,state,player)
+    
+  multiworld.get_entrance("Flotsam Vale -> Scuttleport - Entrance",player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.can_access_scuttleport(options, state, player)
+    
+  multiworld.get_entrance("Scuttleport - Entrance -> Scuttleport - Main",player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.can_traverse_scuttleport_vanilla(state, player)
+    
+  multiworld.get_entrance("Flotsam Vale - Voltai Skip Spot -> Scuttleport - Main",player).access_rule = \
+    lambda state: (options.goal == "magista") or (logic.can_voltai_skip(options, state, player) and state.has(iname.fishing_line, player))
+  
+  multiworld.get_entrance("Scuttleport - Main -> Dump Truck", player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.has_magnetic_shells(state, player)
+
+  multiworld.get_entrance("Scuttleport - Main -> Plug Fuse Pipes",player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.has_all_maps(state, player)
+    
+  multiworld.get_entrance("Flotsam Vale - Voltai Skip Spot -> Scuttleport - Voltai Arena",player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.can_voltai_skip(options, state, player)
+        
+  multiworld.get_entrance("Scuttleport - Main -> Scuttleport - Tower 2 Roof and Tower 3",player).access_rule = \
+    lambda state: (options.goal == "magista") or logic.can_traverse_scuttleport_vanilla(state, player) or logic.can_traverse_scuttleport_boost_jump(options, state, player)
     
   multiworld.get_entrance("Flotsam Vale -> Pinbarge", player).access_rule = \
-    lambda state: logic.has_all_maps(state,player) and state.has(iname.eelectrocute, player)
+    lambda state: (options.goal == "magista") or (logic.has_all_maps(state,player) and state.has(iname.eelectrocute, player))
   
 
   
@@ -303,13 +324,6 @@ def set_location_rules(world: "ACTWorld") -> None:
                         set_rule(multiworld.get_location(lname.firth, player),
                                 lambda state: logic.can_deal_damage_hard(state,player))
   
-
-  # if options.allow_forkless == "forkless_hard":
-  #   set_rule(multiworld.get_location(lname.nephro, player),
-  #          lambda state: logic.can_deal_damage)
-    
-  #   set_rule(multiworld.get_location(lname.royal_shellsplitter, player),
-  #          lambda state: logic.can_deal_damage)
     
 # ---- Cave of Respite ----
  # spearfishing
@@ -382,6 +396,10 @@ def set_location_rules(world: "ACTWorld") -> None:
  # spearfishing
   set_rule(multiworld.get_location(lname.breadclaw_slacktide_roofhiddenfish, player),
             lambda state: state.has_all({iname.spearfishing, iname.fishing_line}, player))
+            
+ # Other
+  set_rule(multiworld.get_location(lname.breadclaw_slacktide_training, player), 
+            lambda state: state.has(iname.pristine_pearl,player) or logic.are_skips_allowed(options))
 
   if options.goal != "magista":
         # ---- Reef's Edge ----        
@@ -505,12 +523,6 @@ def set_location_rules(world: "ACTWorld") -> None:
         # grapple + eelectrocute
         set_rule(multiworld.get_location(lname.whelkplusplus_sandsbetween_southeelpeak, player),
                 lambda state: state.has_all({iname.fishing_line, iname.eelectrocute}, player))
-        
-        set_rule(multiworld.get_location(lname.salpplus_sandsbetween_groveeel, player),
-                lambda state: state.has_all({iname.fishing_line, iname.eelectrocute}, player))
-        
-        set_rule(multiworld.get_location(lname.usedbandage_sandsbetween_groveeel, player),
-                lambda state: state.has_all({iname.fishing_line, iname.eelectrocute}, player))
 
         # post-pag
         set_rule(multiworld.get_location(lname.bloodstar_postpag_anchorswarm, player),
@@ -589,7 +601,7 @@ def set_location_rules(world: "ACTWorld") -> None:
 
         # grapple + eelectrocute
         set_rule(multiworld.get_location(lname.barbedhook_trashbin_eelgrapple, player),
-                lambda state: state.has_all({iname.fishing_line, iname.eelectrocute}, player))
+                lambda state: (state.has_all({iname.fishing_line, iname.eelectrocute}, player) or logic.can_razor_CAL(options,state,player)))
         
         # ---- Expired Grove Main ----
         # grapple        
@@ -782,14 +794,7 @@ def set_location_rules(world: "ACTWorld") -> None:
         set_rule(multiworld.get_location(lname.hairclaw_flotsamvale_gunkfish, player),
                 lambda state: state.has(iname.spearfishing, player))
         
-        set_rule(multiworld.get_location(lname.chipclaw_flotsamvale_gunkfish, player),
-                lambda state: state.has(iname.spearfishing, player))
         
-        set_rule(multiworld.get_location(lname.rustynail_flotsamvale_gunkfish, player),
-                lambda state: state.has(iname.spearfishing, player))
-        
-        set_rule(multiworld.get_location(lname.barnacle_flotsamvale_gunkfish, player),
-                lambda state: state.has(iname.spearfishing, player))
         
         # grapple + spearfishing
         set_rule(multiworld.get_location(lname.chipclaw_flotsamvale_consortiumfish, player),
@@ -797,13 +802,26 @@ def set_location_rules(world: "ACTWorld") -> None:
         
         # ---- Scuttleport ----
 
-        # grapple + eelectrocute (will add metal shell later)
+        # grapple + eelectrocute 
         set_rule(multiworld.get_location(lname.oldworldwhorl_scuttleport_eelectrocute, player),
-                lambda state: state.has_all({iname.fishing_line, iname.eelectrocute}, player))
+                lambda state: state.has(iname.eelectrocute, player) and (state.has(iname.fishing_line,player) or logic.can_CAL(options,state,player)))
+                
+        # magnet
+        set_rule(multiworld.get_location(lname.barbedhook_scuttleport_magnet, player),
+                lambda state: logic.has_magnetic_shells(state,player) or logic.can_CAL(options, state, player))
                 
         # grapple and spearfishing
         set_rule(multiworld.get_location(lname.mussel_scuttleport_magnetfish,player),
                 lambda state: state.has_all({iname.fishing_line, iname.spearfishing}, player))
+                
+        set_rule(multiworld.get_location(lname.chipclaw_scuttleport_gunkfish, player),
+                lambda state: state.has(iname.spearfishing, player))
+        
+        set_rule(multiworld.get_location(lname.rustynail_scuttleport_gunkfish, player),
+                lambda state: state.has(iname.spearfishing, player))
+        
+        set_rule(multiworld.get_location(lname.barnacle_scuttleport_gunkfish, player),
+                lambda state: state.has(iname.spearfishing, player))
         
         if options.goal != "voltai" and options.goal != "roland":
         

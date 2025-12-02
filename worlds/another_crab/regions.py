@@ -92,13 +92,7 @@ ACT_regions: Dict[str, Set[str]] = {
         sname.legal_brick,
         sname.spring
     }, 
-    rname.trashbin_plateau: {
-        rname.trashbin_shells,
-    },
-    rname.trashbin_shells: {
-        sname.shotgun_shell,
-        sname.cascadia_roll
-    },
+    rname.trashbin_plateau: set(),
     rname.southern_town_ridge: {
         sname.legal_brick
     },
@@ -114,6 +108,7 @@ ACT_regions: Dict[str, Set[str]] = {
     },
     rname.grove_raised_platforms: set(),
     rname.grove_village: {
+        rname.voltai_skip_spot,
         sname.skull,
         sname.ham_tin,
         sname.crab_husk
@@ -122,7 +117,7 @@ ACT_regions: Dict[str, Set[str]] = {
         rname.pinbarge,
         rname.post_ceviche,
         rname.consortium_arena,
-        rname.scuttleport,
+        rname.scuttleport_entrance,
         rname.plug_fuse,
         sname.boxing_glove,
         sname.tissue_box,
@@ -130,7 +125,12 @@ ACT_regions: Dict[str, Set[str]] = {
         sname.salt_shaker,
         sname.spring,
         sname.shotgun_shell,
-        sname.legal_brick
+        sname.legal_brick,
+        rname.voltai_skip_spot
+    },
+    rname.voltai_skip_spot: {
+        rname.scuttleport_main,
+        rname.scuttleport_voltai,
     },
     rname.plug_fuse: {
         sname.plug_fuse
@@ -141,11 +141,22 @@ ACT_regions: Dict[str, Set[str]] = {
         sname.spring,
         sname.rubber_duck
     },
-    rname.scuttleport: {
-        sname.dumptruck,
+    rname.scuttleport_entrance: {
         sname.rubber_duck,
+        rname.scuttleport_main
+    },
+    rname.scuttleport_main: {
+        rname.scuttleport_entrance,
+        rname.scuttleport_T2roof_T3,
+        rname.scuttleport_voltai,
+        rname.dumptruck,
         rname.plug_fuse
     },
+    rname.dumptruck: {
+        sname.dumptruck
+    },
+    rname.scuttleport_T2roof_T3: set(),
+    rname.scuttleport_voltai: set(),
     rname.pinbarge: {
         rname.unfathom,
         sname.gacha_capsule,

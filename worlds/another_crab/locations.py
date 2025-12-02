@@ -43,7 +43,7 @@ location_table: Dict[str, ACTLocationData] = {
     lname.consortium: ACTLocationData(rname.consortium_arena, 53, "Flotsam Vale - Consortium Arena"),
     lname.sludge_steamroller: ACTLocationData(rname.flotsam_vale, 54, "Flotsam Vale"),
     lname.ceviche_sisters: ACTLocationData(rname.flotsam_vale, 55, "Flotsam Vale"),
-    lname.voltai: ACTLocationData(rname.scuttleport, 56, "Scuttleport"),
+    lname.voltai: ACTLocationData(rname.scuttleport_voltai, 56, "Scuttleport - Voltai Arena"),
     lname.roland: ACTLocationData(rname.pinbarge, 57, "Pinbarge"),
     lname.petroch: ACTLocationData(rname.unfathom, 58, "The Unfathom"),
     lname.inkerton: ACTLocationData(rname.plains, 59, "Abyssal Plains"),
@@ -225,30 +225,30 @@ location_table: Dict[str, ACTLocationData] = {
     lname.breadclaw_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 608, "Flotsam Vale"), #669e8494-68f1-4de8-8814-6b41a0a69d18-2_A-HighSwamp
     lname.clothesclaw_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 610, "Flotsam Vale"), #b4a9c83a-b0c6-4606-a785-16f4ff33d66e-2_A-HighSwamp
     lname.hairclaw_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 614, "Flotsam Vale"), #6db7743b-1b30-49c4-983a-bb8256959022-2_A-HighSwamp
-    lname.chipclaw_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 615, "Flotsam Vale"), #adbf6e36-d142-458d-a2a4-3406168e3a12-2_C-Facilities
+    lname.chipclaw_scuttleport_gunkfish: ACTLocationData(rname.scuttleport_main, 615, "Scuttleport - Main"), #adbf6e36-d142-458d-a2a4-3406168e3a12-2_C-Facilities
 
-    lname.breadclaw_scuttleport_cubby: ACTLocationData(rname.scuttleport, 424, "Scuttleport"), #b5875ab1-4e89-4ba5-a9ea-6eca950d51f0-2_A-HighSwamp
-    lname.clothesclaw_scuttleport_cubby: ACTLocationData(rname.scuttleport, 425, "Scuttleport"), #8f06cd49-3b2b-4883-b7a5-a421b38870ba-2_A-HighSwamp
-    lname.hairclaw_scuttleport_cubbies: ACTLocationData(rname.scuttleport, 426, "Scuttleport"), #5c795be7-e38a-4986-bcfb-b72ea7e98787-2_A-HighSwamp
-    lname.breadclaw_scuttleport_grate: ACTLocationData(rname.scuttleport, 431, "Scuttleport"), #e5906936-1a8c-4f6e-8280-1be9d7f6f403-2_C-Facilities
-    lname.hairclaw_scuttleport_magnet: ACTLocationData(rname.scuttleport, 435, "Scuttleport"), #62ab5a16-8e1f-411b-91d9-c71b45cd449e-2_C-Facilities
-    lname.clothesclaw_scuttleport_electriccrab: ACTLocationData(rname.scuttleport, 436, "Scuttleport"), #12994a0d-c89b-4780-aaa9-48bf996c9348-2_C-Facilities
-    lname.clothesclaw_scuttleport_trashisland: ACTLocationData(rname.scuttleport, 446, "Scuttleport"), #28baa847-9008-40e5-89b7-566612ca75f5-2_C-Facilities
-    lname.paperclaw_scuttleport_elevator: ACTLocationData(rname.scuttleport, 447, "Scuttleport"), #c2d88bae-4763-4c16-b79e-802f00a519a7-2_C-Facilities
-    lname.hairclaw_scuttleport_rooftopedge: ACTLocationData(rname.scuttleport, 449, "Scuttleport"), #bb733ac9-8027-47b6-bea5-f2f66e202da3-2_C-Facilities
-    lname.hairclaw_scuttleport_rooftoptrash: ACTLocationData(rname.scuttleport, 450, "Scuttleport"), #d6b71350-5bc1-4b39-a53c-9ff5b93faf2b-2_C-Facilities
-    lname.hairclaw_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport, 452, "Scuttleport"), #7126823c-0add-478d-aa4a-fc62c19959b2-2_C-Facilities
-    lname.clothesclaw_scuttleport_npccrab: ACTLocationData(rname.scuttleport, 454, "Scuttleport"), #a8fdab67-387d-4d7b-ad71-85cd2e79e307-2_C-Facilities
-    lname.chipclaw_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport, 457, "Scuttleport"), #3192f8df-dcfa-4383-b5d5-35c92e4eadf4-2_C-Facilities
-    lname.clothesclaw_scuttleport_magrail1: ACTLocationData(rname.scuttleport, 461, "Scuttleport"), #aeaefce5-14fa-4363-b66d-43593a6edc70-2_C-Facilities
-    lname.clothesclaw_scuttleport_magrail2: ACTLocationData(rname.scuttleport, 462, "Scuttleport"), #dd2d2ccc-5586-40f6-b151-cd2c1e6bbd0a-2_C-Facilities
-    lname.hairclaw_scuttleport_magrailroof1: ACTLocationData(rname.scuttleport, 463, "Scuttleport"), #bdffecf0-4d87-4734-b99a-24200c469d72-2_C-Facilities
-    lname.paperclaw_scuttleport_magrail: ACTLocationData(rname.scuttleport, 466, "Scuttleport"), #18840259-0160-447d-991f-4390462801ec-2_C-Facilities
-    lname.hairclaw_scuttleport_magrailroof2: ACTLocationData(rname.scuttleport, 467, "Scuttleport"), #b2e0c8a0-def7-47af-add1-22b37a414b8d-2_C-Facilities
-    lname.chipclaw_scuttleport_magrail: ACTLocationData(rname.scuttleport, 468, "Scuttleport"), #ca68edae-bc53-4270-b2e5-0b3978300fe0-2_C-Facilities
-    lname.hairclaw_scuttleport_magrail: ACTLocationData(rname.scuttleport, 472, "Scuttleport"), #cdd95cfc-844c-4034-9151-51eea2f6592d-2_C-Facilities
-    lname.chipclaw_scuttleport_propanebridge: ACTLocationData(rname.scuttleport, 473, "Scuttleport"), #d9bd9604-874b-4eb1-a738-42297eaf16f3-2_C-Facilities
-    lname.clothesclaw_scuttleport_propanebridge: ACTLocationData(rname.scuttleport, 475, "Scuttleport"), #affcf5d1-3127-4836-9a78-cea5ae6b9766-2_C-Facilities
+    lname.breadclaw_scuttleport_cubby: ACTLocationData(rname.scuttleport_entrance, 424, "Scuttleport - Entrance"), #b5875ab1-4e89-4ba5-a9ea-6eca950d51f0-2_A-HighSwamp
+    lname.clothesclaw_scuttleport_cubby: ACTLocationData(rname.scuttleport_entrance, 425, "Scuttleport - Entrance"), #8f06cd49-3b2b-4883-b7a5-a421b38870ba-2_A-HighSwamp
+    lname.hairclaw_scuttleport_cubbies: ACTLocationData(rname.scuttleport_entrance, 426, "Scuttleport - Entrance"), #5c795be7-e38a-4986-bcfb-b72ea7e98787-2_A-HighSwamp
+    lname.breadclaw_scuttleport_grate: ACTLocationData(rname.scuttleport_entrance, 431, "Scuttleport - Entrance"), #e5906936-1a8c-4f6e-8280-1be9d7f6f403-2_C-Facilities
+    lname.hairclaw_scuttleport_magnet: ACTLocationData(rname.scuttleport_main, 435, "Scuttleport - Main"), #a48d9cb9-3d16-4000-942c-3cd94a124f7e-2_C-Facilities
+    lname.clothesclaw_scuttleport_electriccrab: ACTLocationData(rname.scuttleport_main, 436, "Scuttleport - Main"), #a852dd53-a482-4858-a503-6d6c691c5b7b-2_C-Facilities
+    lname.clothesclaw_scuttleport_trashisland: ACTLocationData(rname.scuttleport_main, 446, "Scuttleport - Main"), #28baa847-9008-40e5-89b7-566612ca75f5-2_C-Facilities
+    lname.paperclaw_scuttleport_elevator: ACTLocationData(rname.scuttleport_main, 447, "Scuttleport - Main"), #c2d88bae-4763-4c16-b79e-802f00a519a7-2_C-Facilities
+    lname.hairclaw_scuttleport_rooftopedge: ACTLocationData(rname.scuttleport_T2roof_T3, 449, "Scuttleport - Tower 2 Roof and Tower 3"), #7b5d1b34-3a32-45a5-9c39-77f389e19658-2_C-Facilities
+    lname.hairclaw_scuttleport_rooftoptrash: ACTLocationData(rname.scuttleport_T2roof_T3, 450, "Scuttleport - Tower 2 Roof and Tower 3"), #3491a71f-e680-4455-b86c-16c4b46fd9e4-2_C-Facilities
+    lname.hairclaw_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport_T2roof_T3, 452, "Scuttleport - Tower 2 Roof and Tower 3"), #5ef755f7-50bb-423c-92b2-03455f92fd13-2_C-Facilities
+    lname.clothesclaw_scuttleport_npccrab: ACTLocationData(rname.scuttleport_T2roof_T3, 454, "Scuttleport - Tower 2 Roof and Tower 3"), #f94ca676-2e0f-4ca1-acbf-06c327b51480-2_C-Facilities
+    lname.chipclaw_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport_T2roof_T3, 457, "Scuttleport - Tower 2 Roof and Tower 3"), #acec02a3-4585-4671-bab2-787caa9cf456-2_C-Facilities
+    lname.clothesclaw_scuttleport_magrail1: ACTLocationData(rname.scuttleport_main, 461, "Scuttleport - Main"), #12ff423d-092a-4b8f-a25e-c25ba1b6c1b1-2_C-Facilities
+    lname.clothesclaw_scuttleport_magrail2: ACTLocationData(rname.scuttleport_main, 462, "Scuttleport - Main"), #f6a613bf-a9e8-4561-86e6-7cb491a5796e-2_C-Facilities
+    lname.hairclaw_scuttleport_magrailroof1: ACTLocationData(rname.scuttleport_main, 463, "Scuttleport - Main"), #fdf786b1-912d-4d21-94a2-4b537df8a3a8-2_C-Facilities
+    lname.paperclaw_scuttleport_magrail: ACTLocationData(rname.scuttleport_main, 466, "Scuttleport - Main"), #35fbece2-5d6b-40c1-b971-ede62272a563-2_C-Facilities
+    lname.hairclaw_scuttleport_magrailroof2: ACTLocationData(rname.scuttleport_main, 467, "Scuttleport - Main"), #7b3d0a88-815a-453b-95bb-ba41d5c06e46-2_C-Facilities
+    lname.chipclaw_scuttleport_magrail: ACTLocationData(rname.scuttleport_main, 468, "Scuttleport - Main"), #f8892e4f-5b3e-4d02-9408-d061c129361e-2_C-Facilities
+    lname.hairclaw_scuttleport_magrail: ACTLocationData(rname.scuttleport_main, 472, "Scuttleport - Main"), #13b3ad68-84d2-408e-89ee-925827c3fca5-2_C-Facilities
+    lname.chipclaw_scuttleport_propanebridge: ACTLocationData(rname.scuttleport_main, 473, "Scuttleport - Main"), #173d1895-0c4d-479c-9c1f-0b4e28ce8c76-2_C-Facilities
+    lname.clothesclaw_scuttleport_propanebridge: ACTLocationData(rname.scuttleport_main, 475, "Scuttleport - Main"), #07d78994-2181-4def-b0ee-6a2c5a018757-2_C-Facilities
 
     lname.paperclaw_pinbarge: ACTLocationData(rname.pinbarge, 486, "Pinbarge"), #fef13a6e-bf0d-4814-a8f5-965fb9c2cd31-2_A-PinBargeRunup
     lname.stapleclaw_pinbarge: ACTLocationData(rname.pinbarge, 488, "Pinbarge"), #cc630ad8-cb67-4a50-9e84-2c04c0cc3e16-1_A-PinBargeRunup
@@ -354,11 +354,11 @@ location_table: Dict[str, ACTLocationData] = {
     lname.bloodstar_flotsamvale_craneclam: ACTLocationData(rname.post_ceviche, 397, "Flotsam Vale - Post Ceviche Sisters"), #bb7a792d-9933-49ce-93d0-6bf2762cdb69-2_A-HighSwamp
     lname.tacklepouch_flotsamvale_waterfall: ACTLocationData(rname.flotsam_vale, 403, "Flotsam Vale"), #b6c01d3a-31e3-457d-b53f-ecf0ff3b7e9f-2_B-LowSwamp
 
-    lname.stainlessrelic_scuttleport_clam: ACTLocationData(rname.scuttleport, 438, "Scuttleport"), #95c7f334-5083-4ee8-bbcb-65033ca154f5-2_C-Facilities
-    lname.bloodstar_scuttleport_magrailclam: ACTLocationData(rname.scuttleport, 469, "Scuttleport"), #f5ed972d-9d53-45b3-93b0-a389464d8941-2_C-Facilities
-    lname.stainlessrelic_scuttleport_magrail: ACTLocationData(rname.scuttleport, 470, "Scuttleport"), #83173b8a-6a13-44f0-b3be-f81c8830eb06-2_C-Facilities
-    lname.stainlessrelic_scuttleport_propanebridge: ACTLocationData(rname.scuttleport, 481, "Scuttleport"), #300de773-3757-4ee9-9e43-03bb1ca51410-2_C-Facilities
-    lname.oldworldwhorl_scuttleport_eelectrocute: ACTLocationData(rname.scuttleport, 483, "Scuttleport"), #1af5fbc8-b8d7-47e7-a66d-480feb0c2594-2_C-Facilities
+    lname.stainlessrelic_scuttleport_clam: ACTLocationData(rname.scuttleport_main, 438, "Scuttleport - Main"), #5b38d7db-b409-4b96-98aa-e1a861365453-2_C-Facilities
+    lname.bloodstar_scuttleport_magrailclam: ACTLocationData(rname.scuttleport_main, 469, "Scuttleport - Main"), #fc60178b-0659-4d17-8360-4e51d468355e-2_C-Facilities
+    lname.stainlessrelic_scuttleport_magrail: ACTLocationData(rname.scuttleport_main, 470, "Scuttleport - Main"), #7a52c7e5-0f02-4274-90b6-3bcc0b183d61-2_C-Facilities
+    lname.stainlessrelic_scuttleport_propanebridge: ACTLocationData(rname.scuttleport_main, 481, "Scuttleport - Main"), #77ad1389-a337-45d7-a5e5-d6aa57f6295d-2_C-Facilities
+    lname.oldworldwhorl_scuttleport_eelectrocute: ACTLocationData(rname.scuttleport_T2roof_T3, 483, "Scuttleport - Tower 2 Roof and Tower 3"), #cb9dc74c-99b9-4a54-81b4-eb9997551ad2-2_C-Facilities
 
     lname.bloodstar_unfathom_eastpath: ACTLocationData(rname.unfathom, 494, "The Unfathom"), #81a413d0-b588-49c7-9210-86d193c7eb6c-2_B-DarkCanyon
     lname.bloodstar_unfathom_shortcut: ACTLocationData(rname.unfathom, 505, "The Unfathom"), #baba3ba3-395a-4547-b060-ddaf0e9fe966-2_B-DarkCanyon
@@ -481,22 +481,22 @@ location_table: Dict[str, ACTLocationData] = {
     lname.barbedhook_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 611, "Flotsam Vale"), #3b49cdc6-b609-49b0-a1c2-57307a398920-2_A-HighSwamp
     lname.barbedhook_flotsamvale_sludgefish: ACTLocationData(rname.flotsam_vale, 612, "Flotsam Vale"), #a6a69a65-21fa-4bdd-8940-e1f1f6c226a0-2_A-HighSwamp
 
-    lname.barbedhook_flotsamvale_behindcubby: ACTLocationData(rname.scuttleport, 605, "Scuttleport"), #5b786881-414b-41d4-97ea-b3a850d3633a-2_A-HighSwamp
-    lname.barbedhook_scuttleport_cubby: ACTLocationData(rname.scuttleport, 429, "Scuttleport"), #a91e708c-89a8-4ef0-bf21-870cd56e652e-2_A-HighSwamp
-    lname.barbedhook_scuttleport_magnet: ACTLocationData(rname.scuttleport, 434, "Scuttleport"), #6b8cd4a1-7a84-4148-837a-75369a25511d-2_C-Facilities
-    lname.barbedhook_scuttleport_sorting: ACTLocationData(rname.scuttleport, 439, "Scuttleport"), #5eefb844-f267-416a-ba6e-c1b8ec945cfa-2_C-Facilities
-    lname.barbedhook_scuttleport_magnetdropoff1: ACTLocationData(rname.scuttleport, 442, "Scuttleport"), #631f983b-ebc5-4fa3-aedc-38fd4d1efffb-2_C-Facilities
-    lname.barbedhook_scuttleport_trashisland: ACTLocationData(rname.scuttleport, 445, "Scuttleport"), #931eb344-1b24-4995-947b-4e56674151a5-2_C-Facilities
-    lname.barbedhook_scuttleport_magnetdropoff2: ACTLocationData(rname.scuttleport, 448, "Scuttleport"), #e449f43b-dc05-4e13-8f8c-b93adf0e97fa-2_C-Facilities
-    lname.barbedhook_scuttleport_trashblock: ACTLocationData(rname.scuttleport, 453, "Scuttleport"), #de7097a4-7028-454b-98e6-c61a03557736-2_C-Facilities
-    lname.barbedhook_scuttleport_magrail1: ACTLocationData(rname.scuttleport, 459, "Scuttleport"), #301e305f-fc4c-4bd5-a839-ca1ea6435c13-2_C-Facilities
-    lname.barbedhook_scuttleport_magrail2: ACTLocationData(rname.scuttleport, 460, "Scuttleport"), #0710d989-547d-43e3-b8e0-70c634c08441-2_C-Facilities
-    lname.barbedhook_scuttleport_magrailroof: ACTLocationData(rname.scuttleport, 465, "Scuttleport"), #0732b3f4-78b7-4584-8459-fab762bd98c5-2_C-Facilities
-    lname.barbedhook_scuttleport_magrail3: ACTLocationData(rname.scuttleport, 471, "Scuttleport"), #60db4097-9756-47cc-994c-506ce4069cab-2_C-Facilities
-    lname.barbedhook_scuttleport_propanebridge: ACTLocationData(rname.scuttleport, 474, "Scuttleport"), #53d359e0-d707-4585-8d8f-75bf20cdf165-2_C-Facilities
-    lname.barbedhook_scuttleport_afterbridge: ACTLocationData(rname.scuttleport, 476, "Scuttleport"), #a4d7a5e4-2374-4a0c-8f5d-421b07ae6e2d-2_C-Facilities
-    lname.barbedhook_scuttleport_propaneroof1: ACTLocationData(rname.scuttleport, 477, "Scuttleport"), #df0d5a5c-5391-425d-b250-5c26553f2bfb-2_C-Facilities
-    lname.barbedhook_scuttleport_propaneroof2: ACTLocationData(rname.scuttleport, 478, "Scuttleport"), #7f30ac6a-2e29-4ccb-9fd2-eb2491741c6c-2_C-Facilities
+    lname.barbedhook_flotsamvale_behindcubby: ACTLocationData(rname.scuttleport_entrance, 605, "Scuttleport - Entrance"), #5b786881-414b-41d4-97ea-b3a850d3633a-2_A-HighSwamp
+    lname.barbedhook_scuttleport_cubby: ACTLocationData(rname.scuttleport_entrance, 429, "Scuttleport - Entrance"), #a91e708c-89a8-4ef0-bf21-870cd56e652e-2_A-HighSwamp
+    lname.barbedhook_scuttleport_magnet: ACTLocationData(rname.scuttleport_entrance, 434, "Scuttleport - Entrance"), #6b8cd4a1-7a84-4148-837a-75369a25511d-2_C-Facilities
+    lname.barbedhook_scuttleport_sorting: ACTLocationData(rname.scuttleport_main, 439, "Scuttleport - Main"), #944f517e-6c6b-40f2-88ec-a5490dd08ab0-2_C-Facilities
+    lname.barbedhook_scuttleport_magnetdropoff1: ACTLocationData(rname.scuttleport_main, 442, "Scuttleport - Main"), #cb37f39c-6d87-4151-bbc0-11029c60ebbc-2_C-Facilities
+    lname.barbedhook_scuttleport_trashisland: ACTLocationData(rname.scuttleport_main, 445, "Scuttleport - Main"), #931eb344-1b24-4995-947b-4e56674151a5-2_C-Facilities
+    lname.barbedhook_scuttleport_magnetdropoff2: ACTLocationData(rname.scuttleport_main, 448, "Scuttleport - Main"), #e2b1726c-2622-4dbc-930b-72e296ec9ceb-2_C-Facilities
+    lname.barbedhook_scuttleport_trashblock: ACTLocationData(rname.scuttleport_T2roof_T3, 453, "Scuttleport - Tower 2 Roof and Tower 3"), #75fef681-50e5-4e53-a61e-d2014e9e44f2-2_C-Facilities
+    lname.barbedhook_scuttleport_magrail1: ACTLocationData(rname.scuttleport_main, 459, "Scuttleport - Main"), #b757dc2e-1d8b-4263-9718-93d78d86d98b-2_C-Facilities
+    lname.barbedhook_scuttleport_magrail2: ACTLocationData(rname.scuttleport_main, 460, "Scuttleport - Main"), #7ab018f0-a203-4746-8ef0-4452cc6b8cd0-2_C-Facilities
+    lname.barbedhook_scuttleport_magrailroof: ACTLocationData(rname.scuttleport_main, 465, "Scuttleport - Main"), #3ae12d7f-a589-4f70-8d1b-2d445ad8f34e-2_C-Facilities
+    lname.barbedhook_scuttleport_magrail3: ACTLocationData(rname.scuttleport_main, 471, "Scuttleport - Main"), #264db2a2-8767-40b3-a9e9-1b87669e7fc0-2_C-Facilities
+    lname.barbedhook_scuttleport_propanebridge: ACTLocationData(rname.scuttleport_main, 474, "Scuttleport - Main"), #ad1f2eed-11dc-4980-be85-139863b3f4e8-2_C-Facilities
+    lname.barbedhook_scuttleport_afterbridge: ACTLocationData(rname.scuttleport_main, 476, "Scuttleport - Main"), #085e9638-f3e8-4fee-b725-7879ecbc8b04-2_C-Facilities
+    lname.barbedhook_scuttleport_propaneroof1: ACTLocationData(rname.scuttleport_main, 477, "Scuttleport - Main"), #d18b2837-c335-4535-9ce7-e7b9b44af347-2_C-Facilities
+    lname.barbedhook_scuttleport_propaneroof2: ACTLocationData(rname.scuttleport_main, 478, "Scuttleport - Main"), #095af59b-ebcd-4dc6-87fc-71239d3e2c98-2_C-Facilities
     
     lname.barbedhook_pinbarge1: ACTLocationData(rname.pinbarge, 485, "Pinbarge"), #8edddc0a-8caf-48a1-975e-4167e728a4c3-1_A-PinBargeRunup
     lname.barbedhook_pinbarge2: ACTLocationData(rname.pinbarge, 489, "Pinbarge"), #898633d3-36c1-4f61-88b5-8cd4ca33ec2b-2_B-PinBargeArena
@@ -574,8 +574,8 @@ location_table: Dict[str, ACTLocationData] = {
     lname.mussel_sandsbetween_bobbitfish: ACTLocationData(rname.sands_between, 159,"The Sands Between"), #da5f126f-e470-432c-b5b0-8eca9918ed77-2_A-OOGroveRadius
     lname.barnacle_sandsbetween_bobbitfish: ACTLocationData(rname.sands_between, 161,"The Sands Between"), #15cf7503-de68-4475-b39c-fe687f85c448-2_A-OOGroveRadius
     lname.whelkplusplus_sandsbetween_southeelpeak: ACTLocationData(rname.sands_between, 166,"The Sands Between"), #d61a21a2-c27d-45d7-8e11-75fcd11e8b78-2_A-OOGroveRadius
-    lname.salpplus_sandsbetween_groveeel: ACTLocationData(rname.sands_between, 167,"The Sands Between"), #7faef89f-c78a-4002-9454-c20bf5098229-2_A-OOGroveRadius
-    lname.usedbandage_sandsbetween_groveeel: ACTLocationData(rname.sands_between, 168,"The Sands Between"), #3123f8ec-3548-41f5-a777-c10268e06b8b-2_A-OOGroveRadius
+    lname.salpplus_sandsbetween_groveeel: ACTLocationData(rname.sands_east_grove_shells, 167,"The Sands Between - Grapple to East of Grove"), #7faef89f-c78a-4002-9454-c20bf5098229-2_A-OOGroveRadius
+    lname.usedbandage_sandsbetween_groveeel: ACTLocationData(rname.sands_east_grove_shells, 168,"The Sands Between - Grapple to East of Grove"), #3123f8ec-3548-41f5-a777-c10268e06b8b-2_A-OOGroveRadius
 
     lname.limpet_ridge_ncliffkelp: ACTLocationData(rname.secluded_ridge, 191, "The Sands Between - Secluded Ridge"), #fcb1f0bb-2ebf-449c-b5fd-ebb7d515c7af-2_A-OOGroveRadius
     lname.sanddollar_ridge_broom: ACTLocationData(rname.secluded_ridge, 194, "The Sands Between - Secluded Ridge"), #42686eee-4b9f-4d44-a52d-569d2c814f13-2_A-OOGroveRadius
@@ -638,26 +638,26 @@ location_table: Dict[str, ACTLocationData] = {
     lname.anemoneplus_flotsamvale_northwestfish: ACTLocationData(rname.flotsam_vale, 421, "Flotsam Vale"), #f29c22d3-4459-4d21-b76d-dbdd514fe09a-2_A-HighSwamp
     lname.turtleshell_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 609, "Flotsam Vale"), #584ec079-5ecc-409b-bcac-7197b1d04a1c-2_A-HighSwamp
     lname.lilisopod_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 613, "Flotsam Vale"), #6709552a-af26-4b87-a69e-97830fd645be-2_A-HighSwamp
-    lname.rustynail_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 616, "Flotsam Vale"), #dbcacde0-7803-42c7-8894-026826e23a67-2_C-Facilities
-    lname.barnacle_flotsamvale_gunkfish: ACTLocationData(rname.flotsam_vale, 617, "Flotsam Vale"), #670ead0c-1985-4d91-a259-3ab2d5162376-2_C-Facilities
+    lname.rustynail_scuttleport_gunkfish: ACTLocationData(rname.scuttleport_entrance, 616, "Scuttleport - Entrance"), #dbcacde0-7803-42c7-8894-026826e23a67-2_C-Facilities
+    lname.barnacle_scuttleport_gunkfish: ACTLocationData(rname.scuttleport_main, 617, "Scuttleport - Main"), #670ead0c-1985-4d91-a259-3ab2d5162376-2_C-Facilities
 
-    lname.googlyeye_scuttleport_cubbies: ACTLocationData(rname.scuttleport, 427, "Scuttleport"), #5736e238-67d5-4215-823d-a0c3b3d60b2a-2_A-HighSwamp
-    lname.seastar_scuttleport_cubbies: ACTLocationData(rname.scuttleport, 428, "Scuttleport"), #69c1d4c5-c467-4127-a12a-6277376c47f0-2_A-HighSwamp
-    lname.sanddollar_scuttleport_magnet: ACTLocationData(rname.scuttleport, 432, "Scuttleport"), #bfa268ed-5df9-410b-a71e-fc8f0f711655-2_C-Facilities
-    lname.mussel_scuttleport_magnetfish: ACTLocationData(rname.scuttleport, 433, "Scuttleport"), #3d0db077-a9de-4725-92ac-8c4cd24d3b73-2_C-Facilities
-    lname.limpet_scuttleport_electricboxes: ACTLocationData(rname.scuttleport, 437, "Scuttleport"), #34e41971-5cef-4947-b6ff-6b1e4da0f2d6-2_C-Facilities
-    lname.rubberband_scuttleport_magnetdropoff: ACTLocationData(rname.scuttleport, 440, "Scuttleport"), #f1ce3edd-314d-4cf7-ae79-fdb5cf0a7ac0-2_C-Facilities
-    lname.limpet_scuttleport_magnet: ACTLocationData(rname.scuttleport, 441, "Scuttleport"), #1a376ec2-e1bf-44a3-bc18-0ec8d4252b0d-2_C-Facilities
-    lname.anemoneplus_scuttleport_magnetdropoff: ACTLocationData(rname.scuttleport, 443, "Scuttleport"), #b0c6c00b-fcbb-4884-83c7-cf655211e599-2_C-Facilities
-    lname.lumpsucker_scuttleport_trashisland: ACTLocationData(rname.scuttleport, 444, "Scuttleport"), #5c2d7cbb-1040-4e43-9aee-fac430ece31d-2_C-Facilities
-    lname.sinkerplusplus_scuttleport_clam: ACTLocationData(rname.scuttleport, 451, "Scuttleport"), #f2466d53-7e70-4d19-9c12-cb9da07a72fe-2_C-Facilities
-    lname.seastar_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport, 455, "Scuttleport"), #17a5b692-c56b-4f43-8ca2-b2909ef9c446-2_C-Facilities
-    lname.pufferquill_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport, 456, "Scuttleport"), #08bbdb7b-63dd-4e3d-9499-fc77548c3bd9-2_C-Facilities
-    lname.turtleshell_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport, 458, "Scuttleport"), #0e380f83-dc56-468f-aa76-30f049c33fd8-2_C-Facilities
-    lname.rustynailplus_scuttleport_magrail: ACTLocationData(rname.scuttleport, 464, "Scuttleport"), #b515d67d-b4fa-4282-a872-9c351d087c85-2_C-Facilities
-    lname.barnacleplus_scuttleport_propanebridge: ACTLocationData(rname.scuttleport, 479, "Scuttleport"), #a16b7348-4d15-4bfb-9a0c-ee2f8994deea-2_C-Facilities
-    lname.salp_scuttleport_propanebridge: ACTLocationData(rname.scuttleport, 480, "Scuttleport"), #09d1270f-cab8-45dd-af56-0c7220ad9e98-2_C-Facilities
-    lname.musselplus_scuttleport_voltai: ACTLocationData(rname.scuttleport, 482, "Scuttleport"), #d8ad97ae-8fa3-4a76-98ef-6cf635627776-2_C-Facilities
+    lname.googlyeye_scuttleport_cubbies: ACTLocationData(rname.scuttleport_entrance, 427, "Scuttleport - Entrance"), #5736e238-67d5-4215-823d-a0c3b3d60b2a-2_A-HighSwamp
+    lname.seastar_scuttleport_cubbies: ACTLocationData(rname.scuttleport_entrance, 428, "Scuttleport - Entrance"), #69c1d4c5-c467-4127-a12a-6277376c47f0-2_A-HighSwamp
+    lname.sanddollar_scuttleport_magnet: ACTLocationData(rname.scuttleport_entrance, 432, "Scuttleport - Entrance"), #bfa268ed-5df9-410b-a71e-fc8f0f711655-2_C-Facilities
+    lname.mussel_scuttleport_magnetfish: ACTLocationData(rname.scuttleport_entrance, 433, "Scuttleport - Entrance"), #3d0db077-a9de-4725-92ac-8c4cd24d3b73-2_C-Facilities
+    lname.limpet_scuttleport_electricboxes: ACTLocationData(rname.scuttleport_main, 437, "Scuttleport - Main"), #416129a7-73dc-49db-884e-dd39081c159f-2_C-Facilities
+    lname.rubberband_scuttleport_magnetdropoff: ACTLocationData(rname.scuttleport_main, 440, "Scuttleport - Main"), #37f09b48-7c2f-447e-9c87-5c29f6d0685f-2_C-Facilities
+    lname.limpet_scuttleport_magnet: ACTLocationData(rname.scuttleport_main, 441, "Scuttleport - Main"), #09cdcb1f-cb62-4a7c-a9a1-04aba76325c4-2_C-Facilities
+    lname.anemoneplus_scuttleport_magnetdropoff: ACTLocationData(rname.scuttleport_main, 443, "Scuttleport - Main"), #89d87d3d-1e06-4fd4-8def-17aff3474b11-2_C-Facilities
+    lname.lumpsucker_scuttleport_trashisland: ACTLocationData(rname.scuttleport_main, 444, "Scuttleport - Main"), #5c2d7cbb-1040-4e43-9aee-fac430ece31d-2_C-Facilities
+    lname.sinkerplusplus_scuttleport_clam: ACTLocationData(rname.scuttleport_T2roof_T3, 451, "Scuttleport - Tower 2 Roof and Tower 3"), #4f0723b9-506c-4bcd-a86a-817c5394c800-2_C-Facilities
+    lname.seastar_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport_T2roof_T3, 455, "Scuttleport - Tower 2 Roof and Tower 3"), #a503e8bd-3fb8-4b51-840b-927469510cdf-2_C-Facilities
+    lname.pufferquill_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport_T2roof_T3, 456, "Scuttleport - Tower 2 Roof and Tower 3"), #060c2ec3-888a-42ad-afd2-e33f45c409a9-2_C-Facilities
+    lname.turtleshell_scuttleport_survivorcamp: ACTLocationData(rname.scuttleport_main, 458, "Scuttleport - Main"), #dc30d0d1-3ea2-4b93-9871-2169630e22ef-2_C-Facilities
+    lname.rustynailplus_scuttleport_magrail: ACTLocationData(rname.scuttleport_main, 464, "Scuttleport - Main"), #f8e6d62e-3276-4643-a0f4-f403be5c6fbb-2_C-Facilities
+    lname.barnacleplus_scuttleport_propanebridge: ACTLocationData(rname.scuttleport_main, 479, "Scuttleport - Main"), #30faa811-16e1-433a-977c-d18e5352e0f9-2_C-Facilities
+    lname.salp_scuttleport_propanebridge: ACTLocationData(rname.scuttleport_main, 480, "Scuttleport - Main"), #7fe50500-c6e8-4846-a313-b44f426fb6a3-2_C-Facilities
+    lname.musselplus_scuttleport_voltai: ACTLocationData(rname.scuttleport_main, 482, "Scuttleport - Main"), #5d4e293b-0bc2-489d-8965-f7caba1c762c-2_C-Facilities
 
     lname.barnacle_pinbarge: ACTLocationData(rname.pinbarge, 484, "Pinbarge"), #98b0e1e4-2548-4b28-948d-b3a05147286a-2_A-PinBargeRunup
     lname.musselplus_pinbarge: ACTLocationData(rname.pinbarge, 487, "Pinbarge"), #29dab0bb-a195-47d3-b553-ebc5a4f03154-2_A-PinBargeRunup
@@ -703,7 +703,7 @@ location_table: Dict[str, ACTLocationData] = {
     lname.sunlight_costume_pickup: ACTLocationData(rname.secluded_ridge, 198, "The Sands Between - Secluded Ridge"), #35aa72f2-fa50-4efc-b600-b597382ed877-2_A-OOGroveRadius
     lname.intern_costume_pickup: ACTLocationData(rname.grove_village, 296, "Expired Grove - Village"), #57a328a3-94f4-406c-90de-bdcd1be7d69b-2_C-Village
     lname.cowfishboy_costume_pickup: ACTLocationData(rname.flotsam_vale, 348, "Flotsam Vale"), #b1f8794b-d43d-41b9-827a-75bb4c7a57bf-NickGym
-    lname.bluecollar_costume_pickup: ACTLocationData(rname.scuttleport, 430, "Scuttleport"), #f37cb96e-df05-4aed-b2b5-7d8d5af32483-NickGym
+    lname.bluecollar_costume_pickup: ACTLocationData(rname.scuttleport_entrance, 430, "Scuttleport - Entrance"), #f37cb96e-df05-4aed-b2b5-7d8d5af32483-NickGym
     lname.krillionaire_costume_pickup: ACTLocationData(rname.unfathom, 490, "The Unfathom"), #c762c7f8-33b6-4701-9f4c-7ad7938a5d11-2_B-DarkCanyon
     lname.exiledflame_costume_pickup: ACTLocationData(rname.unfathom, 507, "The Unfathom"), #1b7cb531-3a0a-4957-ab59-da5c9f1da705-2_B-DarkCanyon
     lname.drkril_costume_pickup: ACTLocationData(rname.old_ocean, 551, "The Old Ocean"), #ecc223b8-902c-4d66-b01b-24728ccb7d4e-2_A-BleachedCopse

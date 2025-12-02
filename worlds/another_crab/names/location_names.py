@@ -38,8 +38,8 @@ breadclaw_slacktide_crates = "Breadclaw (Fort Slacktide - Sand Crates and Barrel
 breadclaw_slacktide_training = "Breadclaw (Fort Slacktide - On South Training Area Wall)"
 
 breadclaw_snailcave_entrance = "Breadclaw (Moon Snail's Cave - Ledge Near Entrance)"
-breadclaw_snailcave_shortcut = "Breadclaw (Moon Snail's Cave = Ledge Near Shortcut)"
-breadclaw_snailcave_jelly = "Breadclaw (Moon Snail's Cave = Ledge Past Moon Jelly)"
+breadclaw_snailcave_shortcut = "Breadclaw (Moon Snail's Cave - Ledge Near Shortcut)"
+breadclaw_snailcave_jelly = "Breadclaw (Moon Snail's Cave - Ledge Past Moon Jelly)"
 
 breadclaw_slacktide_crabtrio = "Breadclaw (Fort Slacktide - Near Crab Trio)" # breadclaw found in slacktide post-corruption sitting in a corner near a trio of crabs
 chipclaw_slacktide_brokenwall = "Chipclaw (Fort Slacktide - Behind Broken Wall)" # chipclaw found in the room after the enemy breaks out of the wall on the way to fight the duchess
@@ -181,7 +181,7 @@ paperclaw_flotsamvale_uppervale = "Paperclaw (Flotsam Vale - Near Upper Flotsam 
 breadclaw_flotsamvale_gunkfish = "Breadclaw (Flotsam Vale - Gunk Fishing on Docks)"
 clothesclaw_flotsamvale_gunkfish = "Clothesclaw (Flotsam Vale - Gunk Fishing on Docks)"
 hairclaw_flotsamvale_gunkfish = "Hairclaw (Flotsam Vale - Gunk Fishing Near Bridge)"
-chipclaw_flotsamvale_gunkfish = "Chipclaw (Flotsam Vale - Gunk Fishing Under Middle Tower)"
+chipclaw_scuttleport_gunkfish = "Chipclaw (Scuttleport - Gunk Fishing Under Middle Tower)"
 
 
 breadclaw_scuttleport_cubby = "Breadclaw (Scuttleport - Cubby in First Room)"
@@ -590,8 +590,8 @@ whelk_flotsamvale_westfish = "Whelk (Flotsam Vale - West Gunk Lake Fishing)"
 anemoneplus_flotsamvale_northwestfish = "Anemone+ (Flotsam Vale - Gunk Lake Fishing Northwest of Sludge Steamroller)"
 turtleshell_flotsamvale_gunkfish = "Turtle Shell Shard (Flotsam Vale - Gunk Fishing by Priest)"
 lilisopod_flotsamvale_gunkfish = "Lil' Isopod (Flotsam Vale - Gunk Fishing on Docks)"
-rustynail_flotsamvale_gunkfish = "Rusty Nail (Flotsam Vale - Gunk Fishing Near Blue Tower)"
-barnacle_flotsamvale_gunkfish = "Barnacle (Flotsam Vale - Gunk Fishing Near Middle Tower)"
+rustynail_scuttleport_gunkfish = "Rusty Nail (Scuttleport - Gunk Fishing Near Blue Tower)"
+barnacle_scuttleport_gunkfish = "Barnacle (Scuttleport - Gunk Fishing Near Middle Tower)"
 
 googlyeye_scuttleport_cubbies = "Googly Eye (Scuttleport - Top of Cubbies in First Room)"
 seastar_scuttleport_cubbies = "Seastar (Scuttleport - Top of Cubbies in First Room)"
