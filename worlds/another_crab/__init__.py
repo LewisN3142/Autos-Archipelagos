@@ -84,19 +84,21 @@ class ACTWorld(World):
             
             #Make sure shell rando will work
             while randoVerified == False:
-                #Make sure soda can has something usable for combat
+                #Make sure soda can has something usable for combat if forkless enabled
                 if self.options.allow_forkless != "disabled" and (shell_at_soda.classification != ItemClassification.progression or any(shell_at_soda == element for element in prevented_shells_at_soda)):
                     self.random.shuffle(shell_items)
                     shell_at_soda = item_table[shell_items[shell_locations.index(sname.soda_can)]]
                     plug_region = self.multiworld.get_region(location_table[shell_locations[shell_items.index(sname.plug_fuse)]].region,self.player)
                     print(shell_at_soda)
-                #elif plug_region.entrances
+                
+                #Make sure plug fuse randomizes outside of scuttleport (TODO: if not glitching and voltai skip?? need bool)
                 elif any(plug_region.entrances[0].parent_region.name == element for element in prevented_plug_regions) and (self.options.randomfuse == True):
                     self.random.shuffle(shell_items)
                     shell_at_soda = item_table[shell_items[shell_locations.index(sname.soda_can)]]
                     plug_region = self.multiworld.get_region(location_table[shell_locations[shell_items.index(sname.plug_fuse)]].region,self.player)
                     print(plug_region.entrances[0].parent_region.name)
                     
+                #Fix plugfuse location if not randomized
                 elif (self.options.randomfuse == False) and (plug_region.entrances[0].parent_region.name != rname.plug_fuse):
                     #swap plug_fuse and shell in plug_fuse location
                     plug_fuse_item_index = shell_items.index(sname.plug_fuse)
@@ -106,6 +108,9 @@ class ACTWorld(World):
                     shell_at_soda = item_table[shell_items[shell_locations.index(sname.soda_can)]]
                     plug_region = self.multiworld.get_region(location_table[shell_locations[shell_items.index(sname.plug_fuse)]].region,self.player)
                     print("Returning fuse to vanilla location")
+                    
+                #TODO: add in check for pink crab if not forkless hard and skipping?? Need bool for getting past magista
+                    
                 else:
                     randoVerified = True
 
@@ -167,9 +172,11 @@ class ACTWorld(World):
         if self.options.shelleport_location:
             shelleport = self.create_item(iname.shelleport)
             if self.options.shelleport_location == "starting_items":
+                print("shelleport starting item")
                 self.multiworld.push_precollected(shelleport)
                 items_to_create[iname.shelleport] = 0
             elif self.options.shelleport_location == "vanilla_location":
+                print("vanilla shelleport")
                 self.get_location(lname.shelleport_skill).place_locked_item(shelleport)
                 self.location_total -=  1
                 items_to_create[iname.shelleport] = 0
@@ -177,6 +184,7 @@ class ACTWorld(World):
         if self.options.fishing_line_location:
             fishing_line = self.create_item(iname.fishing_line)
             if self.options.fishing_line_location == "vanilla_location":
+                print("vanilla fishing line")
                 self.get_location(lname.fishing_line).place_locked_item(fishing_line)
                 self.location_total -= 1
                 items_to_create[iname.fishing_line] = 0
@@ -239,9 +247,11 @@ class ACTWorld(World):
 
         available_filler: List[str] = [filler for filler in items_to_create if (items_to_create[filler] > 0) and item_table[filler].classification == ItemClassification.filler and item_table[filler].item_group != "Costume"]
         stowaways: List[str] = [stow for stow in item_table if item_table[stow].item_group == "Stowaways"]
+        print("Available Filler:")
         print(available_filler)
+        print("Traps:")
         print(trap_items)
-        print("Loaction Count: " + str(self.location_total))
+        print("Location Count: " + str(self.location_total))
         print("Item Count: " + str(items_total))
         print("Total Filler: " + str(total_filler))
         if total_filler < 0:

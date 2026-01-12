@@ -352,6 +352,10 @@ def set_location_rules(world: "ACTWorld") -> None:
     
   set_rule(multiworld.get_location(lname.sanddollar_shallows_arch, player),
             lambda state: state.has(iname.fishing_line, player))
+            
+  set_rule(multiworld.get_location(lname. ,player),
+            lambda (state: state.has(iname.fishing_line,player) and state.can_reach_location(lname.nephro,player)) or logic.are_skips_allowed(options)   
+            
  
  # spearfishing
   set_rule(multiworld.get_location(lname.mussel_shallows_southwestcastlefish, player),

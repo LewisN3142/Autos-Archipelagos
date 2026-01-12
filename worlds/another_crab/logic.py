@@ -90,9 +90,9 @@ def can_sisters_skip_glitches(options: ACTGameOptions, state: CollectionState, p
 def can_voltai_skip(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return can_razor_CAL(options, state, player) # no constraint for shell clip as most work - statistically guaranteed to have one that does
     
-#Can bypass/kill pink crab by moonsnail
+#Can bypass/kill pink crab by moonsnail (TODO: better implementation of shell rando required for this)
 def can_pink_crab(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
-    return can_reach_msg_dmg_shells(state,player) or  has_adaptation(state,player) or can_shell_clip(options, state, player)
+    return True #can_reach_msg_dmg_shells(state,player) or  has_adaptation(state,player) or can_shell_clip(options, state, player)
     
 def can_pagurus_quick_kill(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return are_skips_allowed(options)
