@@ -90,6 +90,37 @@ whelk_plus_plus = "Whelk++"
 zooplankton = "Zooplankton"
 zooplankton_plus = "Zooplankton+"
 
+#ng+ stowaways
+streakers_sigil = "Streaker's Sigil"
+sentinels_sigil = "Sentinel's Sigil"
+sickos_sigil = "Sicko's Sigil"
+shadows_sigil = "Shadow's Sigil"
+sorcerers_sigil = "Sorcerer's Sigil"
+anemone_plus_plus_plus = "Anemone+++"
+barnacle_plus_plus_plus = "Barnacle+++"
+cockle_plus_plus = "Cockle++"
+fruit_sticker_plus_plus = "Fruit Sticker++"
+fruit_sticker_plus_plus_plus = "Fruit Sticker+++"
+lamprey_plus_plus = "Lamprey++"
+lamprey_plus_plus_plus = "Lamprey+++"
+limpet_plus_plus_plus = "Limpet+++"
+mussel_plus_plus_plus = "Mussel+++"
+oyster_plus = "Oyster+"
+oyster_plus_plus = "Oyster++"
+puffer_quill_plus = "Puffer Quill+"
+rusty_nail_plus_plus = "Rusty Nail++"
+rusty_nail_plus_plus_plus = "Rusty Nail+++"
+sea_cucumber_plus = "Sea Cucumber+"
+seastar_plus_plus_plus = "Sea Star+++"
+shark_tooth_plus_plus = "Shark Tooth++"
+sinker_plus_plus_plus = "Sinker+++"
+siphonophore_plus_plus = "Siponophore++"
+siphonophore_plus_plus_plus = "Siponophore+++"
+used_bandage_plus_plus = "Used Bandage++"
+wad_of_gum_plus = "Wad of Gum+"
+whelk_plus_plus_plus = "Whelk+++"
+
+
 # currency items
 breadclaw = "Breadclaw" # 250 microplastics
 chipclaw = "Chipclaw" # 500 microplastics

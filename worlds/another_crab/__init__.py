@@ -192,6 +192,13 @@ class ACTWorld(World):
         if self.options.remove_costumes:
             for costumes in costume_items: items_to_create[costumes] = 0
 
+        #Remove NG+ Stowaways based on option
+        if self.options.ngplus_stowaways.value == False:
+            for item_name in item_table:
+                if item_table[item_name].item_group == "StowawaysNGPlus":
+                    items_to_create[item_name] = 0
+
+        #Exclude regions and items based on goal
         regions_to_exclude = []
 
         if self.options.goal == "roland":
@@ -247,6 +254,11 @@ class ACTWorld(World):
 
         available_filler: List[str] = [filler for filler in items_to_create if (items_to_create[filler] > 0) and item_table[filler].classification == ItemClassification.filler and item_table[filler].item_group != "Costume"]
         stowaways: List[str] = [stow for stow in item_table if item_table[stow].item_group == "Stowaways"]
+
+        #add NG+ stowaways if settings allow
+        if self.options.ngplus_stowaways.value == True:
+            stowaways += [stow for stow in item_table if item_table[stow].item_group == "StowawaysNGPlus"]
+
         print("Available Filler:")
         print(available_filler)
         print("Traps:")
@@ -349,7 +361,9 @@ class ACTWorld(World):
             "death_link": bool(self.options.deathlink.value),
             "goal": int(self.options.goal.value),
             "shell_rando_enabled": bool(self.options.randomshells.value > 0),
-            "shell_rando": shell_rando
+            "shell_rando": shell_rando,
+            "ngplus_bosses": bool(self.options.ngplus_bosses.value),
+            "ngplus_slots": bool(self.options.ngplus_slots.value)
         }
 
 

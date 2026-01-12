@@ -110,6 +110,24 @@ class DeathLink(Toggle):
     display_name: str = "Death Link"
     default: bool = False
 
+class NGPlusBosses(Toggle):
+    """Replaces all bosses with their NG+ variants.
+    This can make runs signifigantly more difficult, especially early on."""
+    display_name: str = "NG+ Bosses"
+    default: bool = False
+
+class NGPlusStowaways(Toggle):
+    """Adds New Game+ stowaways to the item pool."""
+    display_name: str = "NG+ Stowaways"
+    default: bool = False
+
+class NGPlusStowawaySlots(Toggle):
+    """Determines stowaway capacity and slots
+    False = NG (3 Stowaways, 9 Slot Max)
+    True = NG+ (4 Stowaways, 12 Slot Max)"""
+    display_name: str = "NG+ Stowaway Capacity"
+    default: bool = False
+
 @dataclass
 class ACTGameOptions(PerGameCommonOptions):
     goal: Goal
@@ -124,3 +142,6 @@ class ACTGameOptions(PerGameCommonOptions):
     microplasticMultiplier: MicroplasticMultiplier
     trapamount: TrapAmount
     deathlink: DeathLink
+    ngplus_bosses: NGPlusBosses
+    ngplus_stowaways: NGPlusStowaways
+    ngplus_slots: NGPlusStowawaySlots
