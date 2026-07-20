@@ -36,9 +36,6 @@ class ACTWorld(World):
     slot_data_items = List[ACTItem]
     placed_shells = List[ACTLocation]
 
-    def generate_output(self, output_directory: str):
-        visualize_regions(self.multiworld.get_region("Menu", self.player), f"Player{self.player}.puml", show_entrance_names=False ) #regions_to_highlight=self.multiworld.get_all_state(self.player).reachable_regions[self.player]
-
     def generate_early(self):
         # early fork shuffling
         if self.options.fork_location == "shuffled_early_local" and not self.options.allow_forkless:
@@ -77,7 +74,7 @@ class ACTWorld(World):
             randoVerified: bool = False
             shell_at_soda: ACTItemData = item_table[shell_items[shell_locations.index(sname.soda_can)]]
             plug_region: Region = self.multiworld.get_region(location_table[shell_locations[shell_items.index(sname.plug_fuse)]].region,self.player)
-            prevented_shells_at_soda = [sname.piggy_bank,sname.crab_husk,sname.rubber_duck,sname.baby_shoe]
+            prevented_shells_at_soda = [sname.piggy_bank,sname.crab_husk,sname.rubber_duck,sname.baby_shoe,sname.dentures]
             prevented_plug_regions = [rname.scuttleport_entrance,rname.scuttleport_main,rname.scuttleport_T2roof_T3,rname.scuttleport_voltai, rname.dumptruck,rname.pinbarge,rname.unfathom,rname.plains,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
             print(plug_region.entrances[0].parent_region.name)
 
@@ -317,7 +314,7 @@ class ACTWorld(World):
             region.add_exits(exits)
 
         regions_to_exclude = []
-            # player can complete the game if they can reach the final region
+            # player can complete the game if they can reach the final region/location
         if self.options.goal == "home":
             self.multiworld.completion_condition[self.player] = \
                 lambda state: state.can_reach_region(spot = rname.carcinia_ruins, player = self.player)
@@ -339,16 +336,15 @@ class ACTWorld(World):
 
         for location_name, location_id in location_name_to_id.items():
             individual_locations_to_exclude = []
-            if not self.options.ngplus_bosses: 
+            if not self.options.ngplus_bosses:
                 individual_locations_to_exclude.append(lname.extremely_rude_snail)
-            locationExcluded = (location_name in individual_locations_to_exclude)
-            locationInExcludedRegion = (location_table[location_name].region in regions_to_exclude)
 
-            if (not locationExcluded) and (not locationInExcludedRegion):
+            isLocationExcluded = (location_name in individual_locations_to_exclude)
+            isLocationInExcludedRegion = (location_table[location_name].region in regions_to_exclude)
+            if (not isLocationExcluded) and (not isLocationInExcludedRegion):
                 region = self.multiworld.get_region(location_table[location_name].region, self.player) 
                 location = ACTLocation(self.player, location_name, location_id, region)
-                region.locations.append(location)
-                
+                region.locations.append(location)      
 
     def set_rules(self) -> None:
         set_region_rules(self)
@@ -371,6 +367,5 @@ class ACTWorld(World):
             "ngplus_bosses": bool(self.options.ngplus_bosses.value),
             "ngplus_slots": bool(self.options.ngplus_slots.value)
         }
-
 
         return slot_data

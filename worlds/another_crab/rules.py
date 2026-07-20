@@ -28,8 +28,8 @@ def set_region_rules(world: "ACTWorld") -> None:
   multiworld.get_entrance("Fort Slacktide - Before Destruction -> Moon Snail's Cave", player).access_rule = \
     lambda state: logic.is_moonsnail_accessible(options, state, player)
    
-  multiworld.get_entrance("Moon Snail's Cave -> Fort Slacktide - After Destruction", player).access_rule = \
-    lambda state: state.has(iname.pristine_pearl, player)  
+  multiworld.get_entrance("Fort Slacktide - Before Destruction -> Fort Slacktide - After Destruction", player).access_rule = \
+    lambda state: state.has(iname.pristine_pearl, player)
     
   multiworld.get_entrance("Fort Slacktide - Before Destruction -> Reef's Edge", player).access_rule = \
     lambda state: logic.can_magista_skip(options, state, player)
@@ -129,8 +129,8 @@ def set_location_rules(world: "ACTWorld") -> None:
            lambda state: state.has(iname.fork,player))
 
     if options.ngplus_bosses:
-        set_rule(multiworld.get_location(lname.extremely_rude_snail, player),
-           lambda state: state.has(iname.fork, player))
+        set_rule(multiworld.get_location(lname.extremely_rude_snail, player), 
+                lambda state: state.has(iname.fork,player))
     
     if options.goal != "magista":
         set_rule(multiworld.get_location(lname.pagurus, player),
