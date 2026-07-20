@@ -12,12 +12,10 @@ from . import logic
 if TYPE_CHECKING:
     from . import ACTWorld
 
-
 def set_region_rules(world: "ACTWorld") -> None:
   multiworld = world.multiworld
   player = world.player
   options = world.options
-  #logic.set_options(world.options)
 
   multiworld.get_entrance("Central Shallows -> Central Shallows - Items Behind Grapple", player).access_rule = \
     lambda state: logic.can_skip_some_grapples(options, state, player)
@@ -395,10 +393,10 @@ def set_location_rules(world: "ACTWorld") -> None:
  # spearfishing
   set_rule(multiworld.get_location(lname.breadclaw_slacktide_roofhiddenfish, player),
             lambda state: state.has_all({iname.spearfishing, iname.fishing_line}, player))
-            
- # Other
+
+# Other
   set_rule(multiworld.get_location(lname.breadclaw_slacktide_training, player), 
-            lambda state: state.has(iname.pristine_pearl,player) or logic.are_skips_allowed(options))
+            lambda state: state.has(iname.pristine_pearl, player))
 
   if options.goal != "magista":
         # ---- Reef's Edge ----        

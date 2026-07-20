@@ -31,6 +31,7 @@ southern_town_ridge = "Southern Town Ridge" # area in sands by company town whic
 secluded_ridge = "Secluded Ridge" # area in sands that usually requires mantis punch to access
 secluded_ridge_eel = "Secluded Ridge - Past Eelectrocute" # sub-region of secluded ridge that usually requires eelectrocute to access
 trashbin_plateau = "Trashbin Plateau" 
+trashbin_shells = "Trashbin Shells"
 grove_main = "Expired Grove - Main" # grove up to heikea
 grove_raised_platforms = "Expired Grove - Raised Platforms"
 grove_village = "Expired Grove - Village" # grove path to topoda

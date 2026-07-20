@@ -92,16 +92,15 @@ def can_voltai_skip(options: ACTGameOptions, state: CollectionState, player: int
     
 #Can bypass/kill pink crab by moonsnail (TODO: better implementation of shell rando required for this)
 def can_pink_crab(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
-    return True #can_reach_msg_dmg_shells(state,player) or  has_adaptation(state,player) or can_shell_clip(options, state, player)
-    
+    return can_reach_msg_dmg_shells(state,player) or  has_adaptation(state,player) or can_shell_clip(options, state, player)
+
 def can_pagurus_quick_kill(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return are_skips_allowed(options)
-    
-def can_heikia_quick_kill(options: ACTGameOptions, state: CollectionState, player:  int) -> bool:
+
+def can_heikia_quick_kill(options: ACTGameOptions, state: CollectionState, player: int) -> bool:
     return are_glitches_allowed(options) and state.has_all({iname.fishing_line, iname.spearfishing}, player)
 
-
-### Check if specific tricks are executable
+#Check if specific tricks are executable
 #CAL
 def can_CAL(options: ACTGameOptions, state: CollectionState, player: int) ->  bool:
     return state.has(iname.fork, player) and are_glitches_allowed(options)

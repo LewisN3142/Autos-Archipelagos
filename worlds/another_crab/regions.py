@@ -159,6 +159,8 @@ ACT_regions: Dict[str, Set[str]] = {
         rname.unfathom,
         sname.gacha_capsule,
         sname.ink_cartridge
+        sname.gacha_capsule,
+        sname.ink_cartridge
     },
     rname.unfathom: {
         rname.plains,
@@ -213,8 +215,6 @@ ACT_regions: Dict[str, Set[str]] = {
     sname.baby_shoe : set(),
     sname.lil_bro : set(),
     sname.matryoshka_large : set(),
-    #sname.matryoshka_medium : set(),
-    #sname.matryoshka_small : set(),
     sname.shuttlecock : set(),
     sname.felix_cube : set(),
     sname.piggy_bank : set(),
@@ -258,7 +258,5 @@ ACT_regions: Dict[str, Set[str]] = {
     sname.snow_globe : set(),
     sname.knights_helmet : set(),
     sname.plug_fuse: set()
-
-
 }
 
