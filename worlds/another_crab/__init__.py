@@ -239,8 +239,14 @@ class ACTWorld(World):
                 #if self.options.allow_forkless and item_name == iname.fork:
                     #items_to_create[item_name] = 0
 
+        individual_locations_to_exclude = []
+        if not self.options.ngplus_bosses:
+            individual_locations_to_exclude.append(lname.extremely_rude_snail) 
+
         for location_name in location_name_to_id:
             if location_table[location_name].region in regions_to_exclude:
+                self.location_total -= 1
+            elif location_name in individual_locations_to_exclude:
                 self.location_total -= 1
         
         # fill empty locations with filler and traps
@@ -332,17 +338,17 @@ class ACTWorld(World):
             regions_to_exclude = [rname.reefs_edge_grapple, rname.sands_east_grove_shells,rname.post_pag,rname.southern_town_ridge,rname.secluded_ridge,rname.secluded_ridge_eel,rname.trashbin_plateau,rname.grove_main,rname.grove_raised_platforms,rname.grove_village,rname.post_ceviche,rname.consortium_arena,rname.voltai_skip_spot,rname.plug_fuse,rname.scuttleport_entrance,rname.scuttleport_main,rname.scuttleport_T2roof_T3,rname.scuttleport_voltai,rname.dumptruck,rname.plains,rname.reefs_edge,rname,rname.new_carcinia,rname.sands_between,rname.expired_grove,rname.flotsam_vale,rname.pinbarge,rname.unfathom,rname.old_ocean,rname.drain_bottom,rname.trash_island,rname.carcinia_ruins]
 
         for location_name, location_id in location_name_to_id.items():
-            if location_table[location_name].region not in regions_to_exclude:
+            individual_locations_to_exclude = []
+            if not self.options.ngplus_bosses: 
+                individual_locations_to_exclude.append(lname.extremely_rude_snail)
+            locationExcluded = (location_name in individual_locations_to_exclude)
+            locationInExcludedRegion = (location_table[location_name].region in regions_to_exclude)
+
+            if (not locationExcluded) and (not locationInExcludedRegion):
                 region = self.multiworld.get_region(location_table[location_name].region, self.player) 
                 location = ACTLocation(self.player, location_name, location_id, region)
                 region.locations.append(location)
-
-        # for i in range(len(shell_items)):
-        #     region = self.multiworld.get_region(location_table[shell_locations[i]].region,self.player)
-        #     location = self.placed_shells[i]
-        #     region.locations.append(location)
-
-        
+                
 
     def set_rules(self) -> None:
         set_region_rules(self)

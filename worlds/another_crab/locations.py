@@ -50,6 +50,7 @@ location_table: Dict[str, ACTLocationData] = {
     lname.camtscha: ACTLocationData(rname.old_ocean, 60, "The Old Ocean"),
     lname.praya_dubia: ACTLocationData(rname.drain_bottom, 61, "Bottom of The Drain"),
     lname.firth: ACTLocationData(rname.trash_island, 62, "Trash Island"),
+    lname.extremely_rude_snail: ACTLocationData(rname.central_shallows, 626, "Central Shallows"),
     
     ##### currency item locations
 

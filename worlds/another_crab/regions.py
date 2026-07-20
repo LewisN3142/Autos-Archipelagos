@@ -9,8 +9,6 @@ ACT_regions: Dict[str, Set[str]] = {
     },
     rname.tide_pool: {
         rname.starting_cave,
-        #sname.matryoshka_medium,
-        #sname.matryoshka_small
     },
     rname.starting_cave: {
         rname.central_shallows

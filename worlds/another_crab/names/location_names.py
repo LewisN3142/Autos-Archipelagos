@@ -686,6 +686,7 @@ inkerton = "Inkerton, Crab Hunter"
 camtscha = "Camtscha, The Bleached King"
 praya_dubia = "Praya Dubia, The Ocean's Agony"
 firth = "Firth, The Crab Who Stole The Whorl"
+extremely_rude_snail = "Extremely Rude Snail" # rude snail in ngplus boss form
 
 # skill locations
 shelleport_skill = "Shelleport Skill (Moon Snail)"

@@ -104,23 +104,6 @@ def set_region_rules(world: "ACTWorld") -> None:
     lambda state: (options.goal == "magista") or (logic.has_all_maps(state,player) and state.has(iname.eelectrocute, player))
   
 
-  
-  #Matryoshka Shell Rules
-  #multiworld.get_entrance("Tide Pools -> Matryoshka Medium",player).access_rule = \
-    #lambda state: state.has(sname.matryoshka_large, player)
-  
- # multiworld.get_entrance("Tide Pools -> Matryoshka Small",player).access_rule = \
-    #lambda state: state.has(sname.matryoshka_medium, player)
-  
-
-# def set_shell_rules(world: "ACTWorld") -> None:
-#    multiworld = world.multiworld
-#    player = world.player
-
-#    set_rule(multiworld.get_location(lname.nephro, player),
-#             lambda state: state.can_reach_region())
-
-
 def set_location_rules(world: "ACTWorld") -> None:
   multiworld = world.multiworld
   player = world.player
@@ -144,6 +127,10 @@ def set_location_rules(world: "ACTWorld") -> None:
     
     set_rule(multiworld.get_location(lname.magista, player),
            lambda state: state.has(iname.fork,player))
+
+    if options.ngplus_bosses:
+        set_rule(multiworld.get_location(lname.extremely_rude_snail, player),
+           lambda state: state.has(iname.fork, player))
     
     if options.goal != "magista":
         set_rule(multiworld.get_location(lname.pagurus, player),
@@ -198,7 +185,7 @@ def set_location_rules(world: "ACTWorld") -> None:
     #Forkless Enabled, ensures player has some means of dealing damage for bosses
   elif options.allow_forkless == "forkless_easy":
     set_rule(multiworld.get_location(lname.bloodstar_shallows_help,player),
-           lambda state: logic.can_deal_damage_easy(state,player))
+            lambda state: logic.can_deal_damage_easy(state,player))
     
     set_rule(multiworld.get_location(lname.nephro, player),
             lambda state: logic.can_deal_damage_easy(state,player))
@@ -211,6 +198,10 @@ def set_location_rules(world: "ACTWorld") -> None:
       
     set_rule(multiworld.get_location(lname.magista, player),
             lambda state: logic.can_deal_damage_easy(state,player))
+
+    if options.ngplus_bosses:
+        set_rule(multiworld.get_location(lname.extremely_rude_snail, player),
+           lambda state: logic.can_deal_damage_easy(state, player))
     
     if options.goal != "magista":
         set_rule(multiworld.get_location(lname.pagurus, player),
@@ -275,6 +266,10 @@ def set_location_rules(world: "ACTWorld") -> None:
       
     set_rule(multiworld.get_location(lname.magista, player),
             lambda state: logic.can_deal_damage_hard(state,player))
+
+    if options.ngplus_bosses:
+        set_rule(multiworld.get_location(lname.extremely_rude_snail, player),
+           lambda state: logic.can_deal_damage_hard(state, player))
     
     if options.goal != "magista":
         set_rule(multiworld.get_location(lname.pagurus, player),
@@ -353,8 +348,8 @@ def set_location_rules(world: "ACTWorld") -> None:
   set_rule(multiworld.get_location(lname.sanddollar_shallows_arch, player),
             lambda state: state.has(iname.fishing_line, player))
             
-  set_rule(multiworld.get_location(lname. ,player),
-            lambda (state: state.has(iname.fishing_line,player) and state.can_reach_location(lname.nephro,player)) or logic.are_skips_allowed(options)   
+  set_rule(multiworld.get_location(lname.clothesclaw_shallows_southwestfort ,player),
+            lambda state: (state.has(iname.fishing_line, player) and state.can_reach_location(lname.nephro, player)) or logic.are_skips_allowed(options))
             
  
  # spearfishing
